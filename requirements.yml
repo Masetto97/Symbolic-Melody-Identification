@@ -127,7 +127,7 @@ dependencies:
     - cycler==0.10.0
     - fastcluster==1.1.26
     - kiwisolver==1.1.0
-    - lasagne==0.2.dev1
+    - lasagne==0.1
     - matplotlib==2.2.5
     - midiutil==1.2.1
     - music21==2.1.0
