@@ -7,7 +7,8 @@ import time
 import lasagne
 import numpy as np
 import theano
-import theano.tensor as T
+#import theano.tensor as T
+import theano.tensor.signal.pool as T
 
 from melody_extractor import settings, misc_tools
 
