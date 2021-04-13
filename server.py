@@ -1,5 +1,6 @@
 import socket, pickle
 import os
+import requests
 s = socket.socket()
 s.bind(('', 5000))
 s.listen(1)
@@ -19,8 +20,11 @@ print("ARCHIVO RECIBIDO")
 c.send("Thank you for connecting.")
 
 print("PROCESANDO ARCHIVO")
-os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract mozart_k136.mxl edusalidaprueba1.mid')
+#os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract mozart_k136.mxl edusalidaprueba1.mid')
 os.system('ls')
+
+x = requests.post('http://localhost:5000/index')
+
 c.shutdown(2)
 c.close()
 s.close()
