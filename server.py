@@ -23,7 +23,7 @@ print("PROCESANDO ARCHIVO")
 #os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract mozart_k136.mxl edusalidaprueba1.mid')
 os.system('ls')
 
-x = requests.post('web:5000/index')
+x = requests.post('172.18.0.4:5000/index')
 
 c.shutdown(2)
 c.close()
