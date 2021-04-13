@@ -17,6 +17,10 @@ while True:
 filetodown.close()
 print("ARCHIVO RECIBIDO")
 c.send("Thank you for connecting.")
+print("PROCESANDO MODELOS")
+
+os.system(conda run -n IA ./terminal_client.py --rebuild nn_kernels_mozart.pkl cnn_parameters.json model.pkl)
+
 print("PROCESANDO ARCHIVO")
 os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract prueba2.mid edusalidaprueba1.mid')
 os.system('ls')
