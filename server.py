@@ -19,7 +19,7 @@ print("ARCHIVO RECIBIDO")
 c.send("Thank you for connecting.")
 
 print("PROCESANDO ARCHIVO")
-os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract sonata.mid edusalidaprueba1.mid')
+os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract mozart_k136.mxl edusalidaprueba1.mid')
 os.system('ls')
 c.shutdown(2)
 c.close()
