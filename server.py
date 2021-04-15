@@ -5,6 +5,9 @@ s = socket.socket()
 s.bind(('', 5000))
 s.listen(1)
 c,a = s.accept()
+titulo = c.recv(512)
+titulo_final='./'+titulo+'_procesado.mid'
+print(titulo_final)
 filetodown = open("./salidaprueba.mid", "wb")
 while True:
    aux = c.recv(512)
