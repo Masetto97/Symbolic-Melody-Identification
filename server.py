@@ -23,8 +23,11 @@ print("ARCHIVO RECIBIDO")
 c.send("Thank you for connecting.")
 
 print("PROCESANDO ARCHIVO")
-os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  recibido.mid ' + titulo_final)
-os.system('ls')
+#os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  recibido.mid ' + titulo_final)
+#os.system('ls')
+
+ficheros = {'file1': open('./Salidas_pruebas_TFM/albinoni_adagio_procesado.mid', 'rb')}
+r = requests.post('http://localhost:5000/procesado/', files=ficheros)
 
 #x = requests.post('172.18.0.4:5000/index')
 
