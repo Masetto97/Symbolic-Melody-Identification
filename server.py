@@ -27,7 +27,7 @@ print("PROCESANDO ARCHIVO")
 #os.system('ls')
 
 ficheros = {'file1': open('./Salidas_pruebas_TFM/albinoni_adagio_procesado.mid', 'rb')}
-r = requests.post('http://localhost:5000/procesado/', files=ficheros)
+r = requests.post('http://docker_web:5000/procesado/', files=ficheros)
 
 #x = requests.post('172.18.0.4:5000/index')
 
