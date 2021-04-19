@@ -15,7 +15,7 @@ ruta='./Salidas_pruebas_TFM/'
 print(titulo_procesado)
 
 #RECIBIMOS EL FICHERO
-filetodown = open('./recibido.mid', "wb")
+filetodown = open(titulo_procesado, "wb")
 while True:
    aux = c.recv(512)
    if aux[-3:] == 'fin':
