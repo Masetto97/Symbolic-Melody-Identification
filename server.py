@@ -15,7 +15,7 @@ ruta='./Salidas_pruebas_TFM/'
 print(titulo_procesado)
 
 #RECIBIMOS EL FICHERO
-filetodown = open(titulo_procesado, "wb")
+filetodown = open('recibido.mid', "wb")
 while True:
    aux = c.recv(512)
    if aux[-3:] == 'fin':
@@ -29,6 +29,7 @@ filetodown.close()
 print("ARCHIVO RECIBIDO")
 c.send("Thank you for connecting.")
 
+print(ruta+titulo_procesado)
 #PROCESAMOS EL ARCHIVO Y LO GUARDAMOS EN EL DIRECTORIO CORRESPONDIENTE
 print("PROCESANDO ARCHIVO")
 os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  recibido.mid ' + titulo_procesado)
@@ -39,7 +40,7 @@ os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  rec
 
 #BORRAMOS EL ARCHIVO RECIBIDO AL ESTAR YA PROCESADO Y ENVIADO
 os.system('rm recibido.mid')
-          
+os.system('ls')        
 c.shutdown(2)
 c.close()
 s.close()
