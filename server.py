@@ -11,8 +11,8 @@ c,a = s.accept()
 #OBTENEMOS EL TITULO DE LA CANCION Y CALCULAMOS LAS SALIDAS
 titulo = c.recv(512)
 titulo_procesado = titulo+'_procesado.mid'
-titulo_final='./Salidas_pruebas_TFM/'+titulo_procesado
-print(titulo_final)
+ruta='./Salidas_pruebas_TFM/'
+print(titulo_procesado)
 
 #RECIBIMOS EL FICHERO
 filetodown = open('./recibido.mid', "wb")
@@ -31,11 +31,11 @@ c.send("Thank you for connecting.")
 
 #PROCESAMOS EL ARCHIVO Y LO GUARDAMOS EN EL DIRECTORIO CORRESPONDIENTE
 print("PROCESANDO ARCHIVO")
-os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  recibido.mid ' + titulo_final)
+os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  recibido.mid ' + titulo_procesado)
 
 #ENVIAMOS EL ARCHIVO A DOCKER WEB PARA QUE LO GUARDE EN LA BBDD
-fichero = {'file1': open(titulo_final, 'rb')}
-r = requests.post('http://web:5000/procesado/'+titulo_procesado +'/'+ fichero)
+#fichero = {'file1': open(titulo_final, 'rb')}
+#r = requests.post('http://web:5000/procesado/'+titulo_procesado +'/'+ fichero)
 
 #BORRAMOS EL ARCHIVO RECIBIDO AL ESTAR YA PROCESADO Y ENVIADO
 os.system('rm recibido.mid')
