@@ -35,7 +35,7 @@ os.system('conda run -n IA ./terminal_client.py --model model.pkl --extract  rec
 
 #ENVIAMOS EL ARCHIVO A DOCKER WEB PARA QUE LO GUARDE EN LA BBDD
 fichero = {'file1': open(ruta+titulo_procesado, 'rb')}
-r = requests.post('http://web:5000/procesado/', files=fichero)
+r = requests.post('http://web:5000/procesado', files=fichero)
 
 #BORRAMOS EL ARCHIVO RECIBIDO AL ESTAR YA PROCESADO Y ENVIADO
 os.system('rm recibido.mid')
