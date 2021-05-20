@@ -11,10 +11,7 @@ while True:
    c,a = s.accept()
 
    #OBTENEMOS EL TITULO DE LA CANCION Y CALCULAMOS LAS SALIDAS
-   # titulo = c.recv(512)
-   # titulo_procesado = titulo+'_procesado.mid'
    ruta='./Salidas_pruebas_TFM/salida.mid'
-   # print(titulo_procesado)
 
    #RECIBIMOS EL FICHERO
    filetodown = open('recibido.mid', "wb")
